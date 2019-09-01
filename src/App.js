@@ -5,26 +5,32 @@ import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount () {
-      this.props.onInitIngredients();
-      console.log(this.props.ings); 
+      this.props.fetchPhotos();
+      console.log(this.props.photos); 
   }
   render() {
+    const num = this.props.photos.length
+
     return (
-      <div>123123</div>
+      <div>number: {num} 123</div>
       )
   }
 }
 
 const mapStateToProps = state => {
   return {
-      ings: state.product
+    photos: state.photos
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-      onInitIngredients: () => dispatch(actions.initIngredients())
+    fetchPhotos: () => dispatch(actions.fetchPhotos())
   }
 }
 

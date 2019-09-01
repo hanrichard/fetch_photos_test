@@ -6,13 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 import App from './App';
-import productReducer from './store/reducers/products';
+// import photosReducer from './store/reducers/index';
+import rootReducer from './store/reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const rootReducer = combineReducers({
-  product: productReducer
-});
+// const rootReducer = combineReducers({
+//   photos: photosReducer
+// });
 
 const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)

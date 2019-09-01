@@ -1,3 +1,6 @@
+
+import { fetchPhotos } from './photos';
+
 export {
-    initIngredients
-} from './products';
+  fetchPhotos
+};
